@@ -1,0 +1,17 @@
+name: macOS checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Check cleanup and clipboard behavior
+        run: swift run --disable-sandbox CleanerChecks
+      - name: Check localizations
+        run: swift scripts/check-localizations.swift
+      - name: Build and verify the app
+        run: bash scripts/build.sh

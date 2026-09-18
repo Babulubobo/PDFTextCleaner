@@ -1,0 +1,6 @@
+这是从 PDF 复制的一段中文内容，句子中间出现了不必要的换行。
+
+This text was copied from a PDF document. It should read as one paragraph.
+
+• 保留列表第一项
+• Keep the second list item
